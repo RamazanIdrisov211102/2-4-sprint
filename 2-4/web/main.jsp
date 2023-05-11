@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<a href="/addStudent.jsp" class="btn btn-info btn-sm">Add Student</a>
+<a href="/addStudent" class="btn btn-info btn-sm">Add Student</a>
 <div class="container">
     <div class="row mt-5">
         <div class="col-sm-12">
@@ -53,7 +53,7 @@
     </div>
 </div>
 
-<a href="/addBook.jsp" class="btn btn-info btn-sm">Add Book</a>
+<a href="/addBook" class="btn btn-info btn-sm">Add Book</a>
 <div class="container">
     <div class="row mt-5">
         <div class="col-sm-12">
