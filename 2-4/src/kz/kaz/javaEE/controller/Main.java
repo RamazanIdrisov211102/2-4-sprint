@@ -1,7 +1,11 @@
 package kz.kaz.javaEE.controller;
 
+import kz.kaz.javaEE.entity.Book;
 import kz.kaz.javaEE.entity.Shop;
+import kz.kaz.javaEE.entity.Student;
+import kz.kaz.javaEE.list.BookList;
 import kz.kaz.javaEE.list.List;
+import kz.kaz.javaEE.list.StudentList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,20 +20,13 @@ import java.util.Scanner;
 public class Main extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ArrayList<Shop> shops = List.getAllShops();
-        if (shops != null) {
-            for (Shop shop : shops) {
-                System.out.println(shop.getUser()+" "+shop.getProduct()+" "+shop.getProduct());
-            }
-        }
 
-        Scanner in=new Scanner(System.in);
-        String user=in.next();
-        String product =in.next();
-        int price=in.nextInt();
-        Shop shop = new Shop(null, user, product, price);
-        List.addShop(shop);
+        ArrayList<Student> students = StudentList.getAllStudents();
+            req.setAttribute("student", students);
 
+            ArrayList<Book> books= BookList.getAllBooks();
+            req.setAttribute("book", books);
+        req.getRequestDispatcher("/main.jsp").forward(req, resp);
 
     }
 
