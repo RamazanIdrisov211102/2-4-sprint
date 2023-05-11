@@ -24,7 +24,7 @@
                 }
             %>
 
-            <form action="/addBook.jsp" method="post">
+            <form action="/addBook" method="post">
                 <div class="mb-3">
                     <label >Title:</label>
                     <input type="text" name="title" class="form-control" placeholder="Title">
